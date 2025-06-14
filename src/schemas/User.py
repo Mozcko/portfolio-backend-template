@@ -12,7 +12,7 @@ class User(BaseModel):
     username: str
 
     class Config:
-        from_attributes = True # En Pydantic V2 es from_attributes = True
+        from_attributes = True 
 
 # Esquemas para el token de autenticación
 class Token(BaseModel):

@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from core.logging import setup_logging
 from database import engine, Base
 from core.config import settings
-from routes import auth
+from routes import auth, i18n
 from utils import create_admin_user_on_startup
 
 cwd = os.getcwd()
@@ -43,3 +43,4 @@ app.add_middleware(
 
 app.mount("/static", StaticFiles(directory="src/static"), name="static")
 app.include_router(auth.router, prefix="/auth")
+app.include_router(i18n.router)
