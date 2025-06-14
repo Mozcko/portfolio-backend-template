@@ -30,14 +30,26 @@ Follow these steps to set up and run the project locally.
 
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repository-url>
-    cd <your-repository-name>
+    git clone https://github.com/Mozcko/portfolio-backend-template
+    ```
+    ```bash
+    cd portfolio-backend-template
     ```
 
 2.  **Create and activate a virtual environment:**
+    
     ```bash
     python -m venv venv
-    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    ```
+    
+    linux/macOS
+    ```bash
+    source venv/bin/activate
+    ```
+    
+    Windows
+    ```bash
+    .\venv\Scripts\activate
     ```
 
 3.  **Install the dependencies:**
@@ -81,7 +93,7 @@ ALLOWED_CREDENTIALS=true
 Once you've set up your `.env` file, run the app with Uvicorn:
 
 ```bash
-uvicorn src.main:app --reload
+uvicorn main:app --reload --app-dir src
 ```
 
 The application will be available at `http://127.0.0.1:8000`. You can access the interactive API documentation at `http://127.0.0.1:8000/docs`.
